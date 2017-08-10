@@ -1,0 +1,22 @@
+{{ template "header" . }}
+
+  <h1 class="text-center">Liste des utilisateurs</h1>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Password (Bcrypt)</th>
+      </tr>
+      {{ range $user := .users }}
+        <tr>
+          <td>{{ $user.Id }}</td>
+          <td>{{ $user.Name }}</td>
+          <td>{{ $user.Password }}</td>
+        </tr>
+      {{ end }}
+    </table>
+  </div>
+
+{{ template "footer" }}
